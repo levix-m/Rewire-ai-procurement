@@ -1,0 +1,29 @@
+id: negotiation.rapid-repricing
+name: Rapid Repricing
+category: negotiation
+summary: >
+  Computes fast commercial repricing scenarios—volume breaks, surcharges, FX moves,
+  and index-linked adjustments to support live negotiation and deal desk decisions.
+owner: commercial-analytics@example.com
+status: experimental
+maturity: 1
+primary_users:
+  - Buyers in active negotiations
+  - Deal desk analysts
+  - Pricing operations partners
+input_types:
+  - Price lists, discount grids, surcharge schedules
+  - Demand forecast or order pattern
+  - FX and index values with effective dates
+output_types:
+  - Repricing scenario tables with TCO impact
+  - Sensitivity notes on key drivers
+  - Assumption log for audit during fast deals
+tools_required:
+  - Spreadsheet engine or analytics runtime (optional)
+dependencies:
+  - Accurate UoM conversions and tax/shipping rules (as applicable)
+related_agents:
+  - negotiation.negotiation-coach
+  - strategy.icm-input-cost-monitor
+path: agents/negotiation/rapid-repricing

@@ -1,0 +1,29 @@
+id: sourcing.rfx-creator
+name: RFX Creator
+category: sourcing
+summary: >
+  Drafts and assembles RFx packages—requirements, evaluation rubrics, commercial
+  schedules, and clause placeholders tailored to category and risk context.
+owner: category-excellence@example.com
+status: experimental
+maturity: 1
+primary_users:
+  - Category managers
+  - Sourcing excellence teams
+  - Technical requirement owners
+input_types:
+  - Scope and technical requirements
+  - Commercial objectives and risk notes
+  - Approved clause library excerpts
+output_types:
+  - Structured RFx outline with section owners
+  - Weighted scoring model draft
+  - Completeness and red-flag checklist
+tools_required:
+  - CLM clause search (optional)
+dependencies:
+  - Legal/procurement policy for binding language
+related_agents:
+  - sourcing.erfx-agent
+  - sourcing.s4g
+path: agents/sourcing/rfx-creator

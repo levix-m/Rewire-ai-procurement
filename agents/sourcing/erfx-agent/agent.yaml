@@ -1,0 +1,29 @@
+id: sourcing.erfx-agent
+name: eRFX Agent
+category: sourcing
+summary: >
+  Operates sourcing events end-to-end—timelines, Q&A cadence, submission validation,
+  and evaluation readiness across RFI, RFP, and RFQ cycles.
+owner: sourcing-operations@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Sourcing operations
+  - Category managers running events
+  - Supplier enablement leads
+input_types:
+  - Event charter (lots, dates, rules)
+  - Draft RFx artifacts
+  - Communication templates and policies
+output_types:
+  - Event runbook with checkpoints
+  - Compliance checklist per supplier
+  - Evaluation committee hand-off pack
+tools_required:
+  - Sourcing platform (API or export/import)
+dependencies:
+  - Approved RFx content (from RFX Creator or legal)
+related_agents:
+  - sourcing.rfx-creator
+  - sourcing.s4g
+path: agents/sourcing/erfx-agent

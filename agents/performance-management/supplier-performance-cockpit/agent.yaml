@@ -1,0 +1,28 @@
+id: performance.supplier-performance-cockpit
+name: Supplier Performance Cockpit
+category: performance-management
+summary: >
+  Surfaces supplier performance insight—KPI monitoring, drill-down narratives,
+  anomaly highlights, and exportable views for QBRs and exec snapshots.
+owner: analytics-coe@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Operations managers
+  - Category managers
+  - Supplier governance analysts
+input_types:
+  - KPI time series (OTD, quality, lead time, responsiveness)
+  - Targets and benchmarks
+  - Optional qualitative survey snippets
+output_types:
+  - Cockpit storyline (what changed, why it matters)
+  - Ranked anomaly list with supporting context
+  - Dataset exports for slide automation
+tools_required:
+  - BI tool or warehouse SQL (read-only)
+dependencies:
+  - Reliable KPI definitions and measurement cadence
+related_agents:
+  - performance.supplier-performance-management
+path: agents/performance-management/supplier-performance-cockpit

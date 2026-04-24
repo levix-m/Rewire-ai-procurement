@@ -1,0 +1,29 @@
+id: strategy.category-strategy-agent
+name: Category Strategy Agent
+category: strategy
+summary: >
+  Authors structured multi-year category strategies—demand levers, supplier
+  models, risk posture, KPI trees, and stakeholder governance artifacts.
+owner: category-strategy-guild@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Category directors
+  - Business unit executives
+  - Procurement COE leads
+input_types:
+  - Business priorities and demand forecasts
+  - Historical sourcing pipeline and savings ledger
+  - Risk, ESG, and regulatory requirements
+output_types:
+  - Category strategy one-pager and roadmap
+  - RACI and decision log templates
+  - KPI tree aligned to finance and operations
+tools_required:
+  - none
+dependencies:
+  - FP&A forecast interfaces (optional)
+related_agents:
+  - strategy.spendscape
+  - strategy.source-ai
+path: agents/strategy/category-strategy-agent

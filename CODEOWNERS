@@ -1,0 +1,8 @@
+# Default owners for the repository. Update with your organization’s GitHub teams or usernames.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+* @procurement-agents/maintainers
+
+# Registry and governance changes often need explicit review
+/registry/ @procurement-agents/registry-owners
+/governance/ @procurement-agents/governance-owners

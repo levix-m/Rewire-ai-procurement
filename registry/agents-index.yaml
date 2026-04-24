@@ -1,0 +1,419 @@
+# Central catalog of procurement agents. Keep in sync with each agent's agent.yaml.
+# Schema expectations: see registry/required-metadata.md
+
+agents:
+  - id: strategy.spendscape
+    name: Spendscape
+    category: strategy
+    status: beta
+    maturity: 2
+    owner: spend-intelligence@example.com
+    summary: >
+      Maps spend visibility to strategic opportunities—category heatmaps, supplier
+      concentration, leakage signals, and executive-ready landscape narratives.
+    primary_inputs:
+      - Normalized spend cube (PO, invoice, payment) with supplier and category keys
+      - Optional contract metadata for coverage vs spend
+      - Fiscal calendar and FX policy assumptions
+    primary_outputs:
+      - Opportunity map with rationale and confidence tags
+      - Briefing deck outline and talking points for QBRs
+      - Data quality flags that explain blind spots in the landscape
+    key_workflows:
+      - Quarterly category landscape refresh
+      - Pre-sourcing opportunity sizing
+      - Executive spend storytelling with defensible cuts
+    dependencies:
+      - Taxonomy aligned to UNSPSC or internal commodity tree
+      - Stable supplier master identifiers
+    path: agents/strategy/spendscape
+
+  - id: strategy.source-ai
+    name: Source AI
+    category: strategy
+    status: experimental
+    maturity: 1
+    owner: strategic-sourcing-coe@example.com
+    summary: >
+      Identifies sourcing strategies and event hypotheses—when to go to market,
+      likely competition dynamics, and supplier shortlist hypotheses from signals.
+    primary_inputs:
+      - Category strategy goals and constraints
+      - Spend and supplier baseline from Spendscape or equivalent
+      - Market intelligence snippets (indices, news, risk feeds)
+    primary_outputs:
+      - Sourcing strategy options with trade-off narrative
+      - RFx timing recommendation and risk register
+      - Supplier long-list hypotheses with diligence checklist
+    key_workflows:
+      - Annual category plan refresh
+      - Make-vs-buy and insource reconsideration prompts
+      - Pre-RFx strategy alignment with stakeholders
+    dependencies:
+      - strategy.spendscape (recommended)
+      - Policy for single-source and business continuity
+    path: agents/strategy/source-ai
+
+  - id: strategy.category-strategy-agent
+    name: Category Strategy Agent
+    category: strategy
+    status: beta
+    maturity: 2
+    owner: category-strategy-guild@example.com
+    summary: >
+      Produces structured category strategies—demand management levers, supplier
+      models, risk posture, and multi-year roadmaps tied to business outcomes.
+    primary_inputs:
+      - Business unit priorities and forecast drivers
+      - Historical savings and project pipeline
+      - Risk and ESG requirements by category
+    primary_outputs:
+      - Category strategy one-pager and roadmap (Gantt-style milestones)
+      - Stakeholder RACI and decision log template
+      - KPI tree aligned to sourcing and operations
+    key_workflows:
+      - Annual category strategy sign-off
+      - Mid-year strategy refresh after demand shock
+      - Post-merger category harmonization planning
+    dependencies:
+      - Finance forecast interfaces
+      - ESG scorecard feeds where required
+    path: agents/strategy/category-strategy-agent
+
+  - id: strategy.spendsculptor
+    name: SpendSculptor
+    category: strategy
+    status: beta
+    maturity: 2
+    owner: data-foundation@example.com
+    summary: >
+      Cleanses, normalizes, enriches, and taxonomizes raw spend so downstream
+      agents operate on trustworthy, comparable data—not spreadsheet chaos.
+    primary_inputs:
+      - Raw AP/ERP extracts with messy descriptions
+      - Supplier tables with duplicates and aliases
+      - Reference taxonomies and mapping rules (versioned)
+    primary_outputs:
+      - Curated spend dataset with mapped commodity and supplier IDs
+      - Exception report for manual stewardship queues
+      - Lineage notes for mapping decisions (audit-friendly)
+    key_workflows:
+      - Monthly spend close hygiene sprint
+      - Post-acquisition data harmonization
+      - Taxonomy upgrade with remap impact analysis
+    dependencies:
+      - Master data management APIs or batch files
+      - Approved taxonomy versions in shared/schemas
+    path: agents/strategy/spendsculptor
+
+  - id: strategy.icm-input-cost-monitor
+    name: ICM (Input Cost Monitor)
+    category: strategy
+    status: experimental
+    maturity: 1
+    owner: cost-engineering@example.com
+    summary: >
+      Tracks input cost drivers (commodities, logistics, labor indices) and
+      translates external shocks into category impact scenarios for buyers.
+    primary_inputs:
+      - Commodity and index feeds (e.g., metals, resins, freight)
+      - Bill-of-materials or cost models where available
+      - Contract pass-through and indexation clauses
+    primary_outputs:
+      - Impact heatmap by category and supplier
+      - Should-cost adjustment scenarios with assumptions
+      - Brief for negotiation or contractual recovery discussions
+    key_workflows:
+      - Monthly commodity review with procurement leadership
+      - Ad hoc shock response (geopolitical, weather, strike)
+      - Should-cost refresh before RFx
+    dependencies:
+      - Market data subscriptions
+      - strategy.spendsculptor for clean baselines (recommended)
+    path: agents/strategy/icm-input-cost-monitor
+
+  - id: sourcing.s4g
+    name: S4G
+    category: sourcing
+    status: beta
+    maturity: 2
+    owner: digital-sourcing@example.com
+    summary: >
+      S4G orchestrates guided sourcing plays—stakeholder alignment, event
+      packaging, and decision-ready award scenarios for complex categories.
+    primary_inputs:
+      - Approved sourcing strategy and constraints
+      - Supplier lists with qualification status
+      - Baseline pricing and volume allocations
+    primary_outputs:
+      - Sourcing playbook timeline with milestones
+      - Scenario matrix (lotting, incumbents, new entrants)
+      - Decision memo draft for governance forums
+    key_workflows:
+      - Complex multi-region category sourcing wave
+      - Incumbent re-compete with transformation scope
+      - Quick tactical re-bid for tail spend
+    dependencies:
+      - CLM for NDA and MSA status
+      - sourcing.erfx-agent for event execution (optional)
+    path: agents/sourcing/s4g
+
+  - id: sourcing.erfx-agent
+    name: eRFX Agent
+    category: sourcing
+    status: beta
+    maturity: 2
+    owner: sourcing-operations@example.com
+    summary: >
+      Runs and coordinates sourcing events—timelines, Q&A cadence, submission
+      validation, and evaluation readiness across RFI/RFP/RFQ cycles.
+    primary_inputs:
+      - Event charter (lots, incumbents, due dates)
+      - Draft RFx artifacts from RFX Creator or upstream
+      - Supplier communication rules and templates
+    primary_outputs:
+      - Event runbook with weekly checkpoints
+      - Submission compliance checklist per supplier
+      - Hand-off pack for evaluation committee
+    key_workflows:
+      - Full competitive RFQ with sealed bids
+      - RFI followed by down-select RFP
+      - Extension and amendment management under time pressure
+    dependencies:
+      - Sourcing platform APIs or manual export/import paths
+      - sourcing.rfx-creator for document baselines (recommended)
+    path: agents/sourcing/erfx-agent
+
+  - id: sourcing.rfx-creator
+    name: RFX Creator
+    category: sourcing
+    status: experimental
+    maturity: 1
+    owner: category-excellence@example.com
+    summary: >
+      Drafts and assembles RFx content—requirements, scoring rubrics, commercial
+      schedules, and legal boilerplate placeholders tailored to category context.
+    primary_inputs:
+      - Scope statement and technical requirements
+      - Commercial objectives (TCO elements, incumbents, risk)
+      - Past RFx library excerpts (approved clauses only)
+    primary_outputs:
+      - Structured RFx outline with section owners
+      - Draft scoring model with weighted criteria
+      - Red-flag checklist for incomplete requirements
+    key_workflows:
+      - New category RFx from blank page to reviewable draft
+      - Refresh legacy RFx for regulatory or policy changes
+      - Localization pass for regional supplier markets
+    dependencies:
+      - Clause library in CLM
+      - Legal review gates for binding language
+    path: agents/sourcing/rfx-creator
+
+  - id: negotiation.negotiation-coach
+    name: Negotiation Coach
+    category: negotiation
+    status: beta
+    maturity: 2
+    owner: deal-desk@example.com
+    summary: >
+      Prepares negotiation strategies—objectives, tradeables, walk-away logic,
+      and conversation scripts grounded in data and relationship context.
+    primary_inputs:
+      - Current commercial terms and baseline pricing
+      - Supplier performance and risk notes
+      - Internal stakeholder limits and approvals
+    primary_outputs:
+      - Negotiation brief with opening, target, and walk-away
+      - Concession sequencing plan and governance triggers
+      - Debrief template to capture lessons learned
+    key_workflows:
+      - Renewal negotiation for strategic supplier
+      - Post-RFx clarification and final bid leveling support
+      - Conflict escalation path design before executive talks
+    dependencies:
+      - CRM or SRM notes (privacy-controlled)
+      - negotiation.rapid-repricing for scenario math (optional)
+    path: agents/negotiation/negotiation-coach
+
+  - id: negotiation.rapid-repricing
+    name: Rapid Repricing
+    category: negotiation
+    status: experimental
+    maturity: 1
+    owner: commercial-analytics@example.com
+    summary: >
+      Supports fast-moving commercial repricing—volume breaks, surcharges,
+      currency moves, and spot indices—so negotiators can respond in-session.
+    primary_inputs:
+      - Price lists, discount grids, and surcharge rules
+      - Current demand forecast and order pattern
+      - FX and index values with effective dates
+    primary_outputs:
+      - Repriced scenario table with margin or TCO impact
+      - Sensitivity chart for key drivers
+      - Assumption log for audit during fast deals
+    key_workflows:
+      - Same-day repricing during supplier summit
+      - Emergency pass-through negotiation after commodity spike
+      - Spot buy repricing for logistics lanes
+    dependencies:
+      - Clean unit of measure and UoM conversion tables
+      - Finance guardrails for floor/ceiling pricing
+    path: agents/negotiation/rapid-repricing
+
+  - id: performance.supplier-performance-management
+    name: Supplier Performance Management
+    category: performance-management
+    status: beta
+    maturity: 3
+    owner: supplier-governance@example.com
+    summary: >
+      Governs supplier performance—cadence, corrective actions, issue
+      management, and executive governance tied to operational outcomes.
+    primary_inputs:
+      - KPI definitions and contractual SLAs
+      - Incident tickets and delivery performance data
+      - Business owner priorities and risk appetite
+    primary_outputs:
+      - Quarterly business review pack with actions and owners
+      - Corrective action plan templates with milestones
+      - Escalation recommendations to category councils
+    key_workflows:
+      - Monthly operational review for tier-1 suppliers
+      - Corrective action after repeated SLA misses
+      - Joint transformation program steering
+    dependencies:
+      - performance.supplier-performance-cockpit for visibility (recommended)
+      - Ticketing and quality systems integrations
+    path: agents/performance-management/supplier-performance-management
+
+  - id: performance.spend-control-tower
+    name: Spend Control Tower
+    category: performance-management
+    status: experimental
+    maturity: 2
+    owner: procure-to-pay@example.com
+    summary: >
+      Monitors spend controls across requisition-to-pay—policy breaches, maverick
+      buying, catalog leakage, and approval path anomalies with remediation plays.
+    primary_inputs:
+      - P2P transaction feeds (req, PO, receipt, invoice)
+      - Policy rules (approvers, catalogs, preferred suppliers)
+      - Org hierarchy for accountability routing
+    primary_outputs:
+      - Control tower dashboard narrative (exceptions by dimension)
+      - Remediation playbooks by exception type
+      - Trend commentary for operational reviews
+    key_workflows:
+      - Weekly spend control stand-up
+      - Post-audit remediation sprint
+      - New policy rollout impact assessment
+    dependencies:
+      - strategy.spendsculptor for taxonomy alignment (recommended)
+      - IAM-secured access to P2P data warehouse
+    path: agents/performance-management/spend-control-tower
+
+  - id: performance.savings-tracker
+    name: Savings Tracker
+    category: performance-management
+    status: beta
+    maturity: 2
+    owner: value-management-office@example.com
+    summary: >
+      Tracks initiative savings from idea through validation—avoiding double
+      counting, aligning to finance rules, and explaining variance to forecast.
+    primary_inputs:
+      - Initiative charters with baselines and effective dates
+      - Actuals vs baseline from ERP or FP&A
+      - Savings typology policy (hard/soft, one-time/recurring)
+    primary_outputs:
+      - Initiative portfolio view with status and owners
+      - Finance-aligned validation worksheet per initiative
+      - Leakage alerts when realized savings diverge from plan
+    key_workflows:
+      - Monthly VMO savings review
+      - Year-end audit support package assembly
+      - Post-implementation benefits realization check
+    dependencies:
+      - FP&A forecast interfaces
+      - Shared savings definitions in governance docs
+    path: agents/performance-management/savings-tracker
+
+  - id: performance.supplier-performance-cockpit
+    name: Supplier Performance Cockpit
+    category: performance-management
+    status: beta
+    maturity: 2
+    owner: analytics-coe@example.com
+    summary: >
+      Delivers monitoring and insight surfaces—KPI visibility, drill-downs,
+      anomaly detection, and narrative summaries for supplier health at a glance.
+    primary_inputs:
+      - Time-series KPIs (OTD, quality PPM, lead time, responsiveness)
+      - Benchmarks or internal targets by category
+      - Optional qualitative survey snippets
+    primary_outputs:
+      - Cockpit storyline: what changed, why it matters
+      - Ranked anomaly list with supporting charts
+      - Exportable dataset for QBR slide automation
+    key_workflows:
+      - Weekly performance pulse for operations teams
+      - Executive snapshot before supplier meetings
+      - Root-cause triage after KPI threshold breach
+    dependencies:
+      - Data warehouse with supplier granularity
+      - performance.supplier-performance-management for governance linkage
+    path: agents/performance-management/supplier-performance-cockpit
+
+  - id: value.contract-ai
+    name: Contract AI
+    category: value-preservation
+    status: experimental
+    maturity: 1
+    owner: clm-platform@example.com
+    summary: >
+      Supports contract intelligence—clause extraction, obligation tracking
+      hypotheses, renewal watches, and risk highlighting across the portfolio.
+    primary_inputs:
+      - Executed agreements and amendments (metadata + text)
+      - Clause taxonomy and fallback playbooks
+      - Renewal calendar and notice periods
+    primary_outputs:
+      - Clause map with citations to article/section
+      - Obligation and renewal calendar draft
+      - Risk callouts for non-standard or expired terms
+    key_workflows:
+      - Post-signature ingestion and triage
+      - Renewal planning 90/180-day horizons
+      - M&A integration contract harmonization backlog
+    dependencies:
+      - CLM repository access (read-only minimum)
+      - Legal review for interpretation-sensitive outputs
+    path: agents/value-preservation/contract-ai
+
+  - id: value.invoice-to-contract-compliance
+    name: Invoice to Contract Compliance
+    category: value-preservation
+    status: beta
+    maturity: 2
+    owner: ap-governance@example.com
+    summary: >
+      Checks invoice lines against contract terms—price, tier, surcharges,
+      validity windows, and quantity constraints—to flag leakage before pay.
+    primary_inputs:
+      - Invoice header and line details from AP
+      - Active contract price lists and tier schedules
+      - Goods receipt or milestone evidence where applicable
+    primary_outputs:
+      - Match exception report with suspected root cause
+      - Recommended dispute or recovery language (non-binding)
+      - Trend of recurring leakage by supplier and category
+    key_workflows:
+      - Pre-payment three-way match augmentation
+      - Post-audit recovery campaign planning
+      - New contract rollout compliance baseline
+    dependencies:
+      - value.contract-ai or CLM for authoritative clauses (recommended)
+      - GRN and PO data quality suitable for matching
+    path: agents/value-preservation/invoice-to-contract-compliance

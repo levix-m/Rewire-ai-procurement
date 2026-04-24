@@ -1,0 +1,25 @@
+id: domain.your-agent-id
+name: Your Agent Display Name
+category: strategy
+summary: >
+  One-paragraph description of the agent: what procurement problem it solves,
+  for whom, and what “good” looks like. Replace entirely when copying.
+owner: your-team@example.com
+status: planned
+maturity: 0
+primary_users:
+  - Category managers
+  - Procurement excellence leads
+input_types:
+  - Structured spend extract (CSV/Parquet)
+  - Policy summary document
+output_types:
+  - Markdown brief
+  - Structured recommendation table (field names TBD by implementation)
+tools_required:
+  - none
+dependencies:
+  - Stable supplier master data
+related_agents:
+  - domain.related-agent-id
+path: agents/domain/your-agent-folder

@@ -1,0 +1,29 @@
+id: performance.supplier-performance-management
+name: Supplier Performance Management
+category: performance-management
+summary: >
+  Governs supplier performance through operating cadence—QBRs, corrective actions,
+  issue management, and escalation paths tied to contractual obligations.
+owner: supplier-governance@example.com
+status: beta
+maturity: 3
+primary_users:
+  - Supplier governance leads
+  - Category managers
+  - Operations quality partners
+input_types:
+  - KPI definitions and contractual SLAs
+  - Incident and ticket histories
+  - Business priorities and risk appetite
+output_types:
+  - QBR packs with actions, owners, and dates
+  - Corrective action plans (CAPA-style)
+  - Escalation recommendations to councils
+tools_required:
+  - Ticketing/quality system access (optional)
+dependencies:
+  - Agreed KPI definitions and measurement sources
+related_agents:
+  - performance.supplier-performance-cockpit
+  - negotiation.negotiation-coach
+path: agents/performance-management/supplier-performance-management

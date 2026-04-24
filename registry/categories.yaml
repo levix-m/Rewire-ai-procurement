@@ -1,0 +1,33 @@
+# Controlled vocabulary for procurement agent domains.
+# Use these exact `id` values in agent.yaml and agents-index.yaml.
+
+categories:
+  - id: strategy
+    label: Strategy
+    description: >
+      Spend visibility, category strategy, cost structure intelligence, and
+      strategic landscape generation across the supply base.
+
+  - id: sourcing
+    label: Sourcing
+    description: >
+      Market engagement, RFx execution, supplier selection events, and
+      sourcing operating model support.
+
+  - id: negotiation
+    label: Negotiation
+    description: >
+      Deal shaping, commercial conversation support, repricing logic, and
+      scenario planning for awards and renewals.
+
+  - id: performance-management
+    label: Performance Management
+    description: >
+      Supplier performance governance, spend controls, savings realization
+      tracking, and operational cadence.
+
+  - id: value-preservation
+    label: Value Preservation
+    description: >
+      Contract compliance, invoice alignment, and post-award value leakage
+      detection and remediation.

@@ -1,0 +1,29 @@
+id: strategy.icm-input-cost-monitor
+name: ICM (Input Cost Monitor)
+category: strategy
+summary: >
+  Monitors commodity, logistics, and labor input drivers—translating external
+  shocks into category impact scenarios and negotiation briefing support.
+owner: cost-engineering@example.com
+status: experimental
+maturity: 1
+primary_users:
+  - Category managers
+  - Cost engineering
+  - Commodity council leads
+input_types:
+  - Index and commodity price feeds
+  - BOM or should-cost models (when available)
+  - Contract indexation and pass-through clauses
+output_types:
+  - Impact heatmaps by category/supplier
+  - Should-cost adjustment scenarios
+  - Negotiation brief for pass-through discussions
+tools_required:
+  - Market data subscription APIs (optional)
+dependencies:
+  - Clean spend/category mapping (SpendSculptor recommended)
+related_agents:
+  - strategy.spendscape
+  - negotiation.rapid-repricing
+path: agents/strategy/icm-input-cost-monitor

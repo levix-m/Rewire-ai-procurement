@@ -1,0 +1,29 @@
+id: strategy.spendscape
+name: Spendscape
+category: strategy
+summary: >
+  Builds executive-ready spend landscapes—visibility, concentration, leakage
+  hypotheses, and opportunity heatmaps anchored to category strategy cycles.
+owner: spend-intelligence@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Chief procurement officer staff
+  - Category managers
+  - Finance business partners
+input_types:
+  - Normalized spend cube (PO, invoice, payment)
+  - Supplier master and parent/child relationships
+  - Contract coverage metadata (optional)
+output_types:
+  - Opportunity map with confidence tags
+  - Landscape briefing outline and narrative
+  - Data quality and blind-spot register
+tools_required:
+  - BI export or SQL slice (read-only)
+dependencies:
+  - Commodity taxonomy aligned to corporate standard
+related_agents:
+  - strategy.spendsculptor
+  - strategy.source-ai
+path: agents/strategy/spendscape

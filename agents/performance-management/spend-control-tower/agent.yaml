@@ -1,0 +1,29 @@
+id: performance.spend-control-tower
+name: Spend Control Tower
+category: performance-management
+summary: >
+  Monitors procure-to-pay controls—policy compliance, maverick buying, catalog
+  leakage, and approval anomalies—with remediation playbooks for operations.
+owner: procure-to-pay@example.com
+status: experimental
+maturity: 2
+primary_users:
+  - P2P operations leads
+  - Compliance partners
+  - Category managers overseeing policy adherence
+input_types:
+  - Requisition, PO, receipt, and invoice feeds
+  - Policy rules (catalogs, preferred suppliers, approval limits)
+  - Org hierarchy for routing accountability
+output_types:
+  - Exception narratives and trend commentary
+  - Remediation playbooks by exception class
+  - Weekly control tower briefing outline
+tools_required:
+  - P2P analytics warehouse access (read-only)
+dependencies:
+  - Clean taxonomy mapping (SpendSculptor recommended)
+related_agents:
+  - strategy.spendsculptor
+  - performance.savings-tracker
+path: agents/performance-management/spend-control-tower

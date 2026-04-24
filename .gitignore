@@ -1,0 +1,38 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Secrets and local env (never commit credentials)
+.env
+.env.*
+*.pem
+*.key
+secrets/
+.local/
+
+# Python (optional future use)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node (optional future use)
+node_modules/
+
+# Build / artifacts
+dist/
+build/
+*.log
+coverage/
+
+# Temporary drafts
+*.tmp
+.cache/

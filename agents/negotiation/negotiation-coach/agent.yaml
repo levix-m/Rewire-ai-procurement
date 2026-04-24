@@ -1,0 +1,29 @@
+id: negotiation.negotiation-coach
+name: Negotiation Coach
+category: negotiation
+summary: >
+  Prepares negotiation strategies—objectives, tradeables, walk-aways, and
+  conversation guides grounded in performance data and commercial context.
+owner: deal-desk@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Category managers
+  - Deal desk / commercial leads
+  - Executive sponsors for strategic suppliers
+input_types:
+  - Current terms and baseline pricing
+  - Supplier performance and risk notes
+  - Internal approval limits and guardrails
+output_types:
+  - Negotiation brief with targets and walk-aways
+  - Concession sequencing plan
+  - Debrief template for lessons learned
+tools_required:
+  - CRM/SRM notes access (optional, privacy controlled)
+dependencies:
+  - Accurate contract and pricing history
+related_agents:
+  - negotiation.rapid-repricing
+  - performance.supplier-performance-management
+path: agents/negotiation/negotiation-coach

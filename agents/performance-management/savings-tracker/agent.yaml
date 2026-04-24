@@ -1,0 +1,29 @@
+id: performance.savings-tracker
+name: Savings Tracker
+category: performance-management
+summary: >
+  Tracks procurement savings initiatives from baseline through validation—aligning
+  to finance rules, preventing double counting, and explaining variance to plan.
+owner: value-management-office@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Value management office
+  - Category managers
+  - FP&A partners
+input_types:
+  - Initiative charters with baselines and effective dates
+  - Actuals vs baseline (ERP or FP&A feeds)
+  - Savings typology policy (hard/soft, one-time/recurring)
+output_types:
+  - Portfolio views with status and ownership
+  - Finance-aligned validation worksheets
+  - Leakage alerts when realized benefits diverge
+tools_required:
+  - ERP/FP&A data access (read-only)
+dependencies:
+  - Official savings definitions and approval workflow
+related_agents:
+  - performance.spend-control-tower
+  - sourcing.s4g
+path: agents/performance-management/savings-tracker

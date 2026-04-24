@@ -1,0 +1,30 @@
+id: strategy.source-ai
+name: Source AI
+category: strategy
+summary: >
+  Develops sourcing strategies and opportunity hypotheses—timing, competition
+  dynamics, supplier long-lists, and risk-aware event recommendations before RFx work begins.
+owner: strategic-sourcing-coe@example.com
+status: experimental
+maturity: 1
+primary_users:
+  - Category managers
+  - Strategic sourcing leads
+  - Business stakeholders for demand shaping
+input_types:
+  - Category objectives and constraints
+  - Baseline spend and supplier landscape
+  - Market signals (indices, risk, qualitative intel snippets)
+output_types:
+  - Sourcing strategy options with trade-offs
+  - RFx timing and sequencing recommendation
+  - Long-list hypotheses with diligence checklist
+tools_required:
+  - Market news/RSS or curated intel feed (optional)
+dependencies:
+  - Clean spend baseline (Spendscape or equivalent)
+related_agents:
+  - strategy.spendscape
+  - sourcing.s4g
+  - sourcing.erfx-agent
+path: agents/strategy/source-ai

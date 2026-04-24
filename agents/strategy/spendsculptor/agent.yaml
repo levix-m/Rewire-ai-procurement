@@ -1,0 +1,29 @@
+id: strategy.spendsculptor
+name: SpendSculptor
+category: strategy
+summary: >
+  Cleanses, normalizes, enriches, and taxonomizes spend data—deduplicating
+  suppliers, mapping commodities, and producing audit-friendly lineage for downstream agents.
+owner: data-foundation@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Data stewards
+  - Analytics engineers
+  - Category managers (via self-service queues)
+input_types:
+  - Raw AP/ERP extracts
+  - Supplier alias tables
+  - Versioned taxonomy reference files
+output_types:
+  - Curated spend dataset
+  - Exception queues for manual resolution
+  - Mapping lineage documentation
+tools_required:
+  - MDM or batch file access (optional)
+dependencies:
+  - Approved taxonomy versions
+related_agents:
+  - strategy.spendscape
+  - performance.spend-control-tower
+path: agents/strategy/spendsculptor

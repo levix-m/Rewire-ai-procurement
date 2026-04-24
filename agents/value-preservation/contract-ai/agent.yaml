@@ -1,0 +1,28 @@
+id: value.contract-ai
+name: Contract AI
+category: value-preservation
+summary: >
+  Contract intelligence support—clause extraction, obligation hypotheses, renewal
+  watches, and portfolio risk highlighting with citations to agreement text.
+owner: clm-platform@example.com
+status: experimental
+maturity: 1
+primary_users:
+  - Contract managers
+  - Category leads during renewals
+  - Legal operations (as reviewers)
+input_types:
+  - Agreement text and metadata from CLM
+  - Clause taxonomy and playbooks
+  - Renewal calendars and notice periods
+output_types:
+  - Clause maps with article/section references
+  - Obligation and renewal calendar drafts
+  - Risk callouts for non-standard terms
+tools_required:
+  - CLM repository access (read-only minimum)
+dependencies:
+  - Approved clause ontology
+related_agents:
+  - value.invoice-to-contract-compliance
+path: agents/value-preservation/contract-ai

@@ -1,0 +1,28 @@
+id: value.invoice-to-contract-compliance
+name: Invoice to Contract Compliance
+category: value-preservation
+summary: >
+  Validates invoice lines against active contract terms—price, tiers, surcharges,
+  validity windows, and quantity constraints—to detect leakage before payment.
+owner: ap-governance@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Accounts payable analysts
+  - Procurement operations
+  - Supplier master data stewards
+input_types:
+  - Invoice header and line details
+  - Active contract price lists and schedules
+  - Goods receipt or milestone evidence (when applicable)
+output_types:
+  - Match exception reports with suspected root causes
+  - Suggested dispute/recovery talking points (non-binding)
+  - Leakage trend narratives by supplier/category
+tools_required:
+  - AP system extracts (read-only)
+dependencies:
+  - Authoritative contract terms (CLM or Contract AI outputs)
+related_agents:
+  - value.contract-ai
+path: agents/value-preservation/invoice-to-contract-compliance

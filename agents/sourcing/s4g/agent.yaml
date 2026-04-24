@@ -1,0 +1,30 @@
+id: sourcing.s4g
+name: S4G
+category: sourcing
+summary: >
+  S4G guides complex sourcing plays—stakeholder alignment, packaged award scenarios,
+  and decision-ready governance memos for multi-region, multi-lot categories.
+owner: digital-sourcing@example.com
+status: beta
+maturity: 2
+primary_users:
+  - Strategic sourcing leads
+  - Category councils
+  - Business sponsors
+input_types:
+  - Approved sourcing strategy and constraints
+  - Supplier qualification status
+  - Baseline pricing and volume allocations
+output_types:
+  - Sourcing playbook timeline
+  - Scenario matrix for lots and incumbents
+  - Governance decision memo draft
+tools_required:
+  - CLM read access for MSA/NDA status (optional)
+dependencies:
+  - Clean baseline spend and supplier master
+related_agents:
+  - strategy.source-ai
+  - sourcing.erfx-agent
+  - sourcing.rfx-creator
+path: agents/sourcing/s4g

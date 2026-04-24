@@ -17,6 +17,8 @@ Procurement work spans **strategy**, **sourcing**, **negotiation**, **performanc
 - **Prompt-first, workflow-first, or code-first** — implement however you need; documentation stays portable.
 - **Growth without mess** — shared assets and governance docs channel reuse and review.
 
+<img width="1335" height="743" alt="image" src="https://github.com/user-attachments/assets/871b7833-7a31-4804-97bd-a3220bb468c4" />
+
 ---
 
 ## Browse by domain

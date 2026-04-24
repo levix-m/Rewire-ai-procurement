@@ -1,4 +1,4 @@
-# Central catalog of procurement agents. Keep in sync with each agent's agent.yaml.
+# Rewire AI procurement — central catalog of agents. Keep in sync with each agent's agent.yaml.
 # Schema expectations: see registry/required-metadata.md
 
 agents:

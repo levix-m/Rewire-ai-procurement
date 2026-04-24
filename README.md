@@ -1,6 +1,8 @@
-# Procurement Agents
+# Rewire AI procurement
 
 A **structured, collaborative library** of procurement agents—organized by workflow domain, documented for enterprise use, and designed to scale without turning into an unmaintainable link farm.
+
+**Repository:** [github.com/levix-m/rewire-ai-procurement](https://github.com/levix-m/rewire-ai-procurement)
 
 This repository takes inspiration from large “agent project” lists on discoverability, then adds **consistent structure**, **explicit metadata**, and **governance hooks** so many contributors can extend the same system over years.
 

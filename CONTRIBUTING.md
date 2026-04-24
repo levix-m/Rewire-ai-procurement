@@ -1,4 +1,4 @@
-# Contributing to Procurement Agents
+# Contributing to Rewire AI procurement
 
 Thank you for helping grow a **structured**, **governed** library of procurement agents. Consistency matters more than speed: the same layout in every folder keeps automation, search, and onboarding predictable.
 

@@ -2,7 +2,7 @@
 
 ## What this repository is
 
-**Procurement Agents** is a structured, collaborative library of procurement-focused AI agents. Each agent is documented with prompts, workflows, examples, evaluation criteria, and a place for implementation code—so teams can adopt, extend, or replace behavior without losing consistency.
+**Rewire AI procurement** is a structured, collaborative library of procurement-focused AI agents. Each agent is documented with prompts, workflows, examples, evaluation criteria, and a place for implementation code—so teams can adopt, extend, or replace behavior without losing consistency.
 
 The goal is not to ship a single product, but to provide a **governed pattern** for how procurement agents are named, described, versioned in metadata, and discovered through a central registry.
 

@@ -1,5 +1,7 @@
 # Contributor onboarding
 
+**New joiners:** Think of this repository like the slide’s **agentic operating system**: a **Procurement agent orchestrator** connects **specialized agents** end-to-end across procurement, and under `agents/` you’ll find **five domain folders**—**Strategy**, **Sourcing**, **Negotiation**, **Performance management**, and **Value preservation**—that line up with the five **application families** there (prioritize the right opportunities, work with the most effective suppliers, land the right price and service levels, manage for the right performance, and preserve sustained value), meaning each top-level domain folder is one family and the agent folders inside it are the specialists that family uses to hit that goal.
+
 ## Before you start
 
 1. Read [overview.md](./overview.md) and [standards.md](./standards.md).
